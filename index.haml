@@ -1,0 +1,22 @@
+\---
+layout: layout
+\---
+
+{% for post in site.posts %}
+%article
+    %header
+        %h2.right 
+            %a{ :href => "#", :title => "Show '{{ post.title }}' summary", :class => "show-excerpt" } {{ post.title }}
+        %aside.left 
+            %div <strong>{{ post.date | date: "%d %b" }}</strong>
+            %div {{ post.date | date: "%Y" }} 
+
+    %section{ :class =>"writing excerpt right" }
+        {% if post.excerpt.size > 0 %}
+        {{ post.excerpt | markdownify }}
+        {% else %}
+        {{ post.right }}
+        {% endif %}
+        %p.fullentry
+            %a{ :href => "{{ site.baseurl }}{{ post.url }}", :title => "Read full '{{ post.title }}' entry" } Full entry &rarr;
+{% endfor %}

@@ -1,0 +1,10 @@
+*.bck
+*.swn
+*.swm
+*.swo
+*.swp
+
+.sass-cache/
+_site/
+
+.DS_Store

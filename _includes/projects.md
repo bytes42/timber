@@ -1,0 +1,3 @@
+- [**Timber**](https://github.com/bytes42/timber "View the timber project on GitHub") - a Jekyll site theme, as seen here.
+- [**Project1**](https://github.com/bytes42/timber "View the timber project on GitHub") - a description of project 1.
+- [**Project2**](https://github.com/bytes42/timber "View the timber project on GitHub") - a description of project 2.

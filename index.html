@@ -1,0 +1,26 @@
+---
+layout: layout
+---
+{% for post in site.posts %}
+<article>
+  <header>
+    <h2 class='right'>
+      <a class='show-excerpt' href='#' title="Show '{{ post.title }}' summary">{{ post.title }}</a>
+    </h2>
+    <aside class='left'>
+      <div><strong>{{ post.date | date: "%d %b" }}</strong></div>
+      <div>{{ post.date | date: "%Y" }}</div>
+    </aside>
+  </header>
+  <section class='writing excerpt right'>
+    {% if post.excerpt.size > 0 %}
+    {{ post.excerpt | markdownify }}
+    {% else %}
+    {{ post.right }}
+    {% endif %}
+    <p class='fullentry'>
+      <a href='{{ site.baseurl }}{{ post.url }}' title="Read full '{{ post.title }}' entry">Full entry &rarr;</a>
+    </p>
+  </section>
+</article>
+{% endfor %}

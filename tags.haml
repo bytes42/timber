@@ -1,0 +1,39 @@
+\---
+layout: layout
+title: Tags
+\---
+      
+-# get all tags
+{% capture get_tags %}
+{% for tag in site.tags %}
+{{ tag | first | replace: ' ', '+' }}
+{% endfor %}
+{% endcapture %}
+
+-# sort the tags
+{% capture get_tags %}
+{{ get_tags | split:' ' | sort | join:' ' }}
+{% endcapture %}
+
+-# count the tags
+{% capture get_tags_count %}
+{{ get_tags | split:' ' | size }}
+{% endcapture %}
+ 
+%article
+    {% for tag in (1..get_tags_count) %}
+    {% capture curr_tag %}{{ get_tags | split:' ' | first | replace: '+', ' ' }}{% endcapture %}
+    %section
+        %h2.left
+            %a{ :name => "tag-{{ curr_tag }}" } {{ curr_tag }}
+        %ul{ :class => "content tag-page-list right" }
+            {% for post in site.posts %}
+            {% for post_tag in post.tags %}
+            {% if curr_tag == post_tag %}
+            <li><a href="{{ site.baseurl }}{{ post.url }}" title="Read '{{ post.title }}'">{{ post.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+    {% capture remove_tag %}{{ curr_tag | replace: ' ', '+'  }}{% endcapture %}
+    {% capture get_tags %}{{ get_tags | remove: remove_tag }}{% endcapture %}
+    {% endfor %}
