@@ -1,0 +1,284 @@
+/* Master Stylesheet
+  Any rule changes should be made in override.css, not here. */
+
+$page-padding: 1.5em
+$page-width: 43em
+
+$wood: "../img/woods/dark.png"
+$wood-color: #111
+
+$dark-font: #111
+$light-font: #f0f0f0
+$red-font: #c62f2f
+
+/* tags */
+*
+    margin: 0
+    padding: 0
+    vertical-align: baseline
+    font-size: 100%
+    color: inherit
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+
+body
+    $top-grad: #d5d5d5
+    $bottom-grad: #f5f5f5
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($top-grad), to($bottom-grad))
+    background: -webkit-linear-gradient(top, $top-grad, $bottom-grad)
+    background: -moz-linear-gradient(top, $top-grad, $bottom-grad)
+    background: -ms-linear-gradient(top, $top-grad, $bottom-grad)
+    background: -o-linear-gradient(top, $top-grad, $bottom-grad)
+    background-color: $bottom-grad 
+    font: normal normal 300 105%/1.45em 'Source Sans Pro', sans-serif
+    -webkit-font-smoothing: antialiased
+    color: $dark-font
+    overflow: scroll
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+    display: block
+
+img
+    max-width: 100%
+
+ol, ul
+    list-style-position: inside
+
+a
+    font-weight: 400
+    color: $red-font
+
+a:hover
+    text-decoration: none
+
+hr
+    display: none
+
+/* page border */
+#body-border
+    height: 0.5em
+    background: $wood-color url($wood) repeat top left
+
+/* header */
+h1
+    max-width: $page-width
+    margin: 1em auto 0 auto
+    padding: 0 $page-padding
+    font-size: 1.5em
+    font-weight: 600
+    line-height: 1.5em
+    text-align: center
+    span
+        padding: 0 0.6em
+        border-radius: 2em 
+        -moz-border-radius: 2em 
+        -webkit-border-radius: 2em                
+        color: $light-font
+        background: $wood-color url($wood) repeat top left
+
+/* nav */
+nav ul
+    position: relative
+    top: -1.7em
+    max-width: $page-width
+    margin: 0 auto 2em auto
+    padding: 0 $page-padding
+    list-style: none
+    font-weight: 600
+    text-align: center
+    text-transform: uppercase
+    li
+        display: inline-block
+        width: 49%
+        a
+            text-decoration: none
+            color: #666
+        a:hover
+            color: $dark-font
+
+
+
+/* content */
+article
+    max-width: $page-width
+    margin: 0 auto
+    padding: 0 $page-padding
+    overflow: auto
+
+    section
+        width: 100%
+        overflow: auto
+
+    aside
+        position: relative
+        top: 0.75em
+        line-height: 1em
+        div
+            width: 100%
+    
+    .left
+        float: left
+        width: 14%
+        font-size: 0.9em
+        letter-spacing: -0.1em
+        text-align: center
+        text-transform: uppercase
+
+    .right
+        float: right
+        width: 86%
+        padding: 0 0 1.5em 3%
+        border-left: 1px solid $dark-font
+
+    section:last-child > .right
+        padding-bottom: 0
+
+    h2
+        font-size: 2.5em
+        font-weight: 400
+        line-height: 1.25em
+        a
+            color: inherit
+            font-weight: inherit
+            text-decoration: none
+        a:hover
+            text-decoration: underline
+     
+    h2.right
+        padding-bottom: 0.2em
+
+    .writing > *
+        margin-bottom: 1.5em
+
+    .writing > h1, .writing > h2, .writing > h3, .writing > h4, .writing > h5, .writing > h6
+        margin-bottom: 0.25em
+
+    .writing
+        *:last-child
+            margin-bottom: 0  
+        blockquote
+            margin-left: 2em
+            padding: 0.75em
+            border-left: 0.5em solid $red-font
+            background-color: #dcdcdc
+            font-style: italic
+            quotes: "\201C""\201D""\2018""\2019"
+            p
+                display: inline
+        blockquote:before
+            padding-right: 0.1em
+            content: open-quote
+            font-size: 2.5em
+            line-height: 0.1em
+            vertical-align: -.4em
+        ol, ul
+            margin-left: 2em
+        .fullentry
+            margin: 1em 0 0 0
+            font-size: 0.9em
+            text-transform: uppercase
+            text-align: center
+
+    #tag-post-list
+        li
+            display: inline-block
+            width: 33.3%
+            padding-right: 3%
+            list-style: none
+        li:before
+            content: "#"
+ 
+    .tag-page-list
+        list-style: none
+
+article + article
+    margin-top: 2em
+
+/* blurb */
+footer
+    margin: 3em 0 1em 0
+    padding: 1.5em 0
+    background: $wood-color url($wood) repeat top left
+    overflow: auto
+
+#blurb
+    max-width: $page-width
+    margin: 0 auto
+    padding: 0 $page-padding
+    color: $light-font
+    $padding: 1em
+
+    section, div, li
+        box-sizing: border-box
+    
+    #blurb-left
+        float: left
+        width: 75%
+        padding-right: $padding
+    
+        #blurb-left-bottom
+            padding-top: $padding
+            
+            #colophon
+                float: left
+                width: 55%
+                padding-right: $padding
+            
+            #elsewhere
+                float: left
+                width: 45%
+                li  
+                    display: inline-block
+                    float: left
+                    width: 50%
+                    padding: 0 1em 0 20px
+                    background-repeat: no-repeat
+                    background-position: left center
+                li.dribbble
+                    background-image: url(../img/icons/dribbble-16x16.png)
+                li.email
+                    background-image: url(../img/icons/email-16x16.png) 
+                li.facebook
+                    background-image: url(../img/icons/facebook-16x16.png)
+                li.googleplus
+                    background-image: url(../img/icons/google+-16x16.png)
+                li.github
+                    background-image: url(../img/icons/github-16x16.png)
+                li.linkedin
+                    background-image: url(../img/icons/linkedin-16x16.png)
+                li.meetup
+                    background-image: url(../img/icons/meetup-16x16.png)
+                li.spotify
+                    background-image: url(../img/icons/spotify-16x16.png)
+                li.rss
+                    background-image: url(../img/icons/feed-16x16.png)
+                li.twitter
+                    background-image: url(../img/icons/twitter-16x16.png)
+                li.wide
+                    width: 100%
+
+    #blurb-right
+        float: right
+        width: 25%
+        #projects
+            padding-bottom: $padding
+
+    h2
+        font-size: 1em
+        font-weight: 600
+        text-transform: uppercase
+        color: #999
+
+    ul
+        list-style: none
+        
+
+
+/* copyright */
+#copyright
+    max-width: $page-width
+    margin: 1.5em auto
+    padding: 0 $page-padding
+    font-size: 0.8em
+    text-align: center
+
