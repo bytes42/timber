@@ -33,7 +33,7 @@ elsewhere_rss: http://www.feedburner.com
 
 # standard Jekyll options
 baseurl: /timber
-exclude: ["README.md", "Rakefile", "404.haml", "index.haml", "tags.haml"]
+exclude: ["README.md", "Rakefile", "404.haml", "index.haml", "tags.haml", "css/stylesheet.sass", "css/override.sass"]
 permalink: pretty
 pygments: true
 safe: false
