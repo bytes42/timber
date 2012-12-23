@@ -177,6 +177,22 @@ article .writing blockquote:before {
   line-height: 0.1em;
   vertical-align: -0.4em;
 }
+article .writing h3 {
+  font-size: 1.4em;
+  font-weight: 400;
+}
+article .writing h4 {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+article .writing h5 {
+  font-size: 1.15em;
+  font-weight: 400;
+}
+article .writing h6 {
+  font-size: 1.05em;
+  font-weight: 400;
+}
 article .writing ol, article .writing ul {
   margin-left: 2em;
 }
